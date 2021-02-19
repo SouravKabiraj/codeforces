@@ -2,10 +2,10 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Solution {
+public class AGoodString {
     public static void main(String[] args) throws Exception {
-        BufferedReader br = new BufferedReader(new FileReader(new File("input.txt")));
-        // BufferedReader br = new BufferedReader(new InputStreamReader(System.in)));
+        //BufferedReader br = new BufferedReader(new FileReader(new File("input.txt")));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         handleMultipleTestCases(br);
     }
 
@@ -17,10 +17,9 @@ public class Solution {
     }
 
     private static void handleTestCase(BufferedReader br) throws Exception {
-        print(readArrInt(br));
-        System.out.println(readList(br));
-        int[][] ar = new int[][]{{1, 2}, {1, 2}};
-        print(ar);
+	br.readLine();
+	String text = br.readLine();
+	System.out.println(changeNeeded(text,0,text.length()-1,'a'));
     }
 
     private static int readInt(BufferedReader br) throws Exception {
@@ -63,6 +62,32 @@ public class Solution {
             System.out.print(mat[i] + " ");
         }
         System.out.println("}");
+    }
+
+    private static int changeNeeded(String text, int start, int end, char init) {
+	if(start==end) {
+		return init==text.charAt(start)?0:1;
+	}else {
+		char nextChar = (char)(init+1);
+		int mid = (start+end)/2;
+		// CASE 1
+		int changesOne =0;
+	       	for (int i=start;i<=mid;i++) {
+			if(init!=text.charAt(i)){
+				changesOne++;
+			}
+		}
+		changesOne = changeNeeded(text,mid+1,end,nextChar)+changesOne;
+		// CASE 2
+		int changesTwo =0;
+                for (int i=mid+1;i<=end;i++) {
+                        if(init!=text.charAt(i)){
+                                changesTwo++;
+                        }
+                }
+                changesTwo = changeNeeded(text,start,mid,nextChar)+changesTwo;
+		return Math.min(changesOne,changesTwo);
+	}
     }
 }
 
