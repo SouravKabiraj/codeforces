@@ -3,8 +3,8 @@ import java.util.*;
 
 public class Uniqueness {
     public static void main(String[] args) throws Exception {
-        BufferedReader br = new BufferedReader(new FileReader(new File("input.txt")));
-        // BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        // BufferedReader br = new BufferedReader(new FileReader(new File("input.txt")));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         handleTestCase(br);
     }
 
