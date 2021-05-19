@@ -1,2 +1,7 @@
-6
-1 1 1 4 4 4
+3
+5 3
+RGGGGGBB
+5 3
+RBRGR
+5 5
+BBBRR
