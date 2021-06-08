@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Solution {
+public class DubiousCyrpto {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new FileReader(new File("input.txt")));
         // BufferedReader br = new BufferedReader(new InputStreamReader(System.in)));

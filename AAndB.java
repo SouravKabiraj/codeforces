@@ -11,26 +11,26 @@ public class AAndB {
 
 
     private static int getMinOps(int A, int B) {
-    	List<int[]> Q = new ArrayList<>();
-	Q.add(new int[]{A,B,initOp});
-	int pointer = 0;
-	while(Q.get(pointer)[0]!=Q.get(pointer)[1]) {
-		int a = Q.get(pointer)[0];
-		int b = Q.get(pointer)[1];
-		int op = Q.get(pointer)[2];
-		Q.add(new int[]{a+op+1,b,op+1});
-		Q.add(new int[]{a,b+op+1,op+1});
-		System.out.println("a:b:op"+a+":"+b+":"+op);
-		pointer++;
-	}
- 
-	return Q.get(pointer)[2];
+        List<int[]> Q = new ArrayList<>();
+        Q.add(new int[]{A, B});
+        int pointer = 0;
+        while (Q.get(pointer)[0] != Q.get(pointer)[1]) {
+            int a = Q.get(pointer)[0];
+            int b = Q.get(pointer)[1];
+            int op = Q.get(pointer)[2];
+            Q.add(new int[]{a + op + 1, b, op + 1});
+            Q.add(new int[]{a, b + op + 1, op + 1});
+            System.out.println("a:b:op" + a + ":" + b + ":" + op);
+            pointer++;
+        }
+
+        return Q.get(pointer)[2];
     }
 
 
     private static void handleMultipleTestCases(BufferedReader br) throws Exception {
         int T = readInt(br);
-	// System.out.println(T);
+        // System.out.println(T);
         for (int tc = 0; tc < T; tc++) {
             handleTestCase(br);
         }
@@ -38,8 +38,8 @@ public class AAndB {
 
     private static void handleTestCase(BufferedReader br) throws Exception {
         int[] AB = readArrInt(br);
-	// System.out.print(AB[0]+" - "+AB[1]+"-->");
-        System.out.println(getMinOps(AB[0],AB[1]));
+        // System.out.print(AB[0]+" - "+AB[1]+"-->");
+        System.out.println(getMinOps(AB[0], AB[1]));
     }
 
     private static int readInt(BufferedReader br) throws Exception {

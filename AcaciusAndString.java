@@ -7,7 +7,7 @@ public class AcaciusAndString {
         BufferedReader br = new BufferedReader(new FileReader(new File("input.txt")));
         // BufferedReader br = new BufferedReader(new InputStreamReader(System.in)));
         // handleMultipleTestCases(br);
-	System.out.println(getString(br.readLine(),br.readLine()));
+        System.out.println(getString(br.readLine(), br.readLine()));
     }
 
     private static void handleMultipleTestCases(BufferedReader br) throws Exception {
@@ -67,7 +67,8 @@ public class AcaciusAndString {
     }
 
     private static String getString(String text, String pattern) {
-    	int pN = pattern.length();
-	int tN = text.length();
+        int pN = pattern.length();
+        int tN = text.length();
+        return "";
     }
 }
