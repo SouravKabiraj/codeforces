@@ -130,11 +130,11 @@ class Robot {
     }
 }
 
-class Cell {
+class RobotBreakoutCell {
     int x;
     int y;
 
-    Cell(int x, int y) {
+    RobotBreakoutCell(int x, int y) {
         this.x = x;
         this.y = y;
     }
